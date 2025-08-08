@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Text, { NavText } from "./typo";
+import Text from "./typo";
 
 export default function NavItem(props: {
     href: string;
