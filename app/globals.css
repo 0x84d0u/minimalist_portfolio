@@ -1,26 +1,150 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@theme {
+    --*: initial;
+    --spacing: 0.25rem;
+
+    --breakpoint-*: initial;
+    --breakpoint-tablet: 40rem;
+    --breakpoint-laptop: 64rem;
+    --breakpoint-desktop: 80rem;
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-md: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.6rem;
+    --text-xxl: 2.25rem;
+
+    --color-bg1: hsl(0, 0%, 100%);
+    --color-bg2: hsl(0, 0%, 97%);
+    --color-bgContrast: hsl(0, 0%, 5%);
+
+    --color-txtBody: hsl(0, 0%, 30%);
+    --color-txtHeading: hsl(0, 0%, 0%);
+    --color-txtMeta: hsl(0, 0%, 60%);
+    --color-txtContrast: hsl(0, 0%, 99%);
+    --color-txtLink: hsl(250, 80%, 40%);
+
+    --font-pri: var(--font-open-sans), sans-serif;
+    --font-sec: var(--font-ubuntu), sans-serif;
+    --font-ter: var(--font-ubuntu-mono), monospace;
+
+    --font-weight-regular: 400;
+    --font-weight-bolder: 500;
+    --font-weight-boldest: 600;
+
+    --leading-xs: 1.2;
+    --leading-sm: 1.3;
+    --leading-md: 1.5;
+
+    --tracking-xs: -0.01em;
+    --tracking-sm: -0.005em;
+    --tracking-md: 0em;
+    --tracking-lg: 0.01em;
+    --tracking-xl: 0.02em;
+
+
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Font Family */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+h1,
+h2,
+h3 {
+    @apply font-sec;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    @apply font-pri;
+}
+
+code {
+    @apply font-ter;
+}
+
+/* Font weights */
+
+h1 {
+    @apply font-boldest;
+}
+
+h2,
+h3 {
+    @apply font-bolder;
+}
+
+body {
+    @apply font-regular;
+}
+
+/* Line heights */
+
+h1 {
+    @apply leading-xs;
+}
+
+h2,
+h3 {
+    @apply leading-sm;
+}
+
+body {
+    @apply leading-md;
+}
+
+/* Letters spacing */
+
+h1 {
+    @apply tracking-xs;
+}
+
+h2,
+h3 {
+    @apply tracking-sm;
+}
+
+body {
+    @apply tracking-md;
+}
+
+code {
+    @apply tracking-xl;
+}
+
+/* Text Colors */
+
+h1,
+h2,
+h3 {
+    @apply text-txtHeading;
+}
+
+body {
+    @apply text-txtBody;
+}
+
+/* Text sizes */
+h1 {
+    @apply text-xxl;
+}
+
+h2 {
+    @apply text-xl;
+}
+
+h3 {
+    @apply text-lg;
+}
+
+body {
+    @apply text-md;
+}
+
+/* Other typography  */
+
+li {
+    list-style: disc;
+    margin-inline-start: 1rem;
 }
